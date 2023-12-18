@@ -29,12 +29,14 @@ python main.py --keyword=war --page=1 --category=news --from_date=2023-01-01 --t
 
 ### Flags
 
-| Flag     | Alias |             Description             | Example           | Default |
-| :------- | :---: | :---------------------------------: | :---------------- | :-----: |
-| --site   |  -s   | [category](Category.md) of the site | --site=News       |  News   |
-| --page   |  -p   |       number page of the site       | --page=2          |    1    |
-| --date   |  -d   |          date of the site           | --date=2023-12-08 |   now   |
-| --output |  -o   |        json file output path        | --output=data     |  data   |
+| Flag        | Alias |             Description             | Example                | Default |
+| :---------- | :---: | :---------------------------------: | :--------------------- | :-----: |
+| --category  |  -s   | [category](Category.md) of the site | --category=news        |  news   |
+| --page      |  -p   |       number page of the site       | --page=2               |    1    |
+| --keyword   |  -d   |    keyword to search to the site    | --keyword=war          |  None   |
+| --from_date |  -d   |       start date of the site        | --from_date=2023-01-01 |  None   |
+| --to_date   |  -d   |        end date of the site         | --to_date=2023-12-18   |  None   |
+| --output    |  -o   |        json file output path        | --output=data          |  data   |
 
 ## Sample Output
 
