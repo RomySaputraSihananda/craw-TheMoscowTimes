@@ -1,6 +1,7 @@
 import requests
 import time
 
+from json import dumps
 from pyquery import PyQuery
 from requests import Response
 from concurrent.futures import ThreadPoolExecutor
@@ -25,15 +26,17 @@ class TheMoscowTimes:
 
         parser: PyQuery = self.__parser.execute(response.text, 'html')
 
+        article = parser('.article__block.article__block--html.article__block--column').text().replace('\n', '')
+
         self.__result['data'].append({
             "title": parser('h1').text(),
             "lang": parser.attr('lang'),
-            "create_at": parser('.byline__datetime.timeago').attr('datetime'),
+            "create_at": parser('.row-flex.gutter-2 .byline__datetime.timeago').attr('datetime'),
             "url": url,
-            "url_thumbnail": parser('.article__featured-image.featured-image img').attr('src'),
-            'autor': parser('.byline__author__name').text(),
-            "desc": "test",
-            "article": "ok"
+            "url_thumbnail": parser('.row-flex.gutter-2 .article__featured-image.featured-image img').attr('src'),
+            'autor': None if not parser('.row-flex.gutter-2 .byline__author__name').text() else parser('.row-flex.gutter-2 .byline__author__name').text(),
+            "desc": article[:100] + '...',
+            "article": article
         })
 
     def get_by_category(self, category: str, page: int) -> dict:
@@ -47,14 +50,18 @@ class TheMoscowTimes:
         return self.__result
 
 
-    def search(self) -> dict:
-        pass
+    def search(self, keyword: str, page: int) -> dict:
+        response: Response = requests.get(f'https://www.themoscowtimes.com/api/search?query={keyword}')
+        print(response)
 
 if(__name__ == '__main__'):
     start = time.perf_counter()
 
     tmt: TheMoscowTimes = TheMoscowTimes()
-    data: dict = tmt.get_by_category(category='news', page=2)
+    # data: dict = tmt.get_by_category(category='news', page=1)
+    data: dict = tmt.search(keyword='news', page=1)
 
-    print(data)
+    # with open('test_data.json', 'w') as file:
+    #     file.write(dumps(data, indent=2, ensure_ascii=False))
+
     logging.info(time.perf_counter() - start)
