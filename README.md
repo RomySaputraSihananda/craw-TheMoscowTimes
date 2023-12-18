@@ -2,7 +2,7 @@
 
 # craw-TheMoscowTimes
 
-![](https://raw.githubusercontent.com/RomySaputraSihananda/RomySaputraSihananda/main/images/GAWoFxAbkAEfUHg.jpeg)
+![](https://raw.githubusercontent.com/RomySaputraSihananda/RomySaputraSihananda/main/images/GBnPRZmbgAABJA8.jpeg)
 
 Program ini dirancang untuk melakukan web scraping pada situs berita TheMoscowTimes dengan memanfaatkan </br>parameter seperti kategori (category), tanggal, dan halaman (page). </br>Tujuan utama dari program ini adalah untuk mengumpulkan informasi berita dari TheMoscowTimes sesuai </br>dengan kriteria yang diinputkan oleh pengguna.
 
