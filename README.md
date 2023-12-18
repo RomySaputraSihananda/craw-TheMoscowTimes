@@ -1,4 +1,17 @@
+[![Twitter: romy](https://img.shields.io/twitter/follow/RomySihananda)](https://twitter.com/RomySihananda)
+
 # craw-TheMoscowTimes
+
+![](https://raw.githubusercontent.com/RomySaputraSihananda/RomySaputraSihananda/main/images/GAWoFxAbkAEfUHg.jpeg)
+
+Program ini dirancang untuk melakukan web scraping pada situs berita TheMoscowTimes dengan memanfaatkan </br>parameter seperti kategori (category), tanggal, dan halaman (page). </br>Tujuan utama dari program ini adalah untuk mengumpulkan informasi berita dari TheMoscowTimes sesuai </br>dengan kriteria yang diinputkan oleh pengguna.
+
+## Requirements
+
+- **Python >= 3.11.4**
+- **pyquery >= 2.0.0**
+- **pytz >= 2023.3.post1**
+- **Requests >= 2.31.0**
 
 ## Installation
 
